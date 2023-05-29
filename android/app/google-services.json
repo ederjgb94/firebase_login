@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "869565286473",
+    "project_id": "mecanicoapp-aa592",
+    "storage_bucket": "mecanicoapp-aa592.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:869565286473:android:0bee222ffa86bffc899798",
+        "android_client_info": {
+          "package_name": "com.example.firebase_login"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "869565286473-j4fb3839eanurrpao6bv8n07nbjlpc2u.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD6XMD8srtXY2j6hNi1xWF9FvDL-HPlri4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "869565286473-j4fb3839eanurrpao6bv8n07nbjlpc2u.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "869565286473-4gkj43hfl4o8nd4outck12di9hkti44t.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.firebaseLogin"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
