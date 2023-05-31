@@ -99,7 +99,9 @@ class _MyHomePageState extends State<MyHomePage> {
                 return Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    Text('User is signed in: ${snapshot.data!.uid}'),
+                    Text(
+                      'User is signed in: ${snapshot.data!.uid}',
+                    ),
                     TextButton(
                       onPressed: () {
                         FirebaseAuth.instance.signOut();
