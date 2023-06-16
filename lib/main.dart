@@ -1,6 +1,6 @@
 import 'dart:async';
 
-import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_app_check/firebase_app_check.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
@@ -11,8 +11,11 @@ Future<void> main() async {
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
   );
-  await FirebaseAuth.instance.useAuthEmulator("127.0.0.1", 9099);
-  FirebaseFirestore.instance.useFirestoreEmulator("127.0.0.1", 8080);
+  // await FirebaseAuth.instance.useAuthEmulator("127.0.0.1", 9099);
+  // FirebaseFirestore.instance.useFirestoreEmulator("127.0.0.1", 8080);
+  await FirebaseAppCheck.instance.activate(
+    webRecaptchaSiteKey: '6Ldm63omAAAAALD3NIVkghXwnzWZC63d1x-jK83T',
+  );
   runApp(const MyApp());
 }
 
@@ -45,23 +48,20 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  void _insertInFirestore() {
-    var db = FirebaseFirestore.instance;
-    // db.collection('agc').add({
-    //   'name': 'David',
-    //   'age': 30,
-    // });
-  }
+  // void _insertInFirestore() {
+  //   var db = FirebaseFirestore.instance;
+  //   db.collection('pos').add({
+  //     'name': 'ADHARA',
+  //     'age': 3,
+  //   });
+  // }
 
-  Future<void> _login() async {
-    var auth = FirebaseAuth.instance;
-
+  Future<UserCredential> _login() async {
     GoogleAuthProvider googleProvider = GoogleAuthProvider();
 
     googleProvider
         .addScope('https://www.googleapis.com/auth/contacts.readonly');
-    googleProvider.setCustomParameters({'login_hint': 'user@example.com'});
-    await FirebaseAuth.instance.signInWithRedirect(googleProvider);
+    return await FirebaseAuth.instance.signInWithPopup(googleProvider);
   }
 
   StreamSubscription<User?> checarUsuario() {

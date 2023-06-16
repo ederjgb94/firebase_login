@@ -21,10 +21,7 @@ class DefaultFirebaseOptions {
     }
     switch (defaultTargetPlatform) {
       case TargetPlatform.android:
-        throw UnsupportedError(
-          'DefaultFirebaseOptions have not been configured for android - '
-          'you can reconfigure this by running the FlutterFire CLI again.',
-        );
+        return android;
       case TargetPlatform.iOS:
         throw UnsupportedError(
           'DefaultFirebaseOptions have not been configured for ios - '
@@ -58,7 +55,17 @@ class DefaultFirebaseOptions {
     messagingSenderId: '869565286473',
     projectId: 'mecanicoapp-aa592',
     authDomain: 'mecanicoapp-aa592.firebaseapp.com',
+    databaseURL: 'https://mecanicoapp-aa592-default-rtdb.firebaseio.com',
     storageBucket: 'mecanicoapp-aa592.appspot.com',
     measurementId: 'G-5EVQ6LVKVB',
+  );
+
+  static const FirebaseOptions android = FirebaseOptions(
+    apiKey: 'AIzaSyD6XMD8srtXY2j6hNi1xWF9FvDL-HPlri4',
+    appId: '1:869565286473:android:0bee222ffa86bffc899798',
+    messagingSenderId: '869565286473',
+    projectId: 'mecanicoapp-aa592',
+    databaseURL: 'https://mecanicoapp-aa592-default-rtdb.firebaseio.com',
+    storageBucket: 'mecanicoapp-aa592.appspot.com',
   );
 }
